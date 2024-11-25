@@ -2,7 +2,7 @@
 
 ## ⚙️ Version
 
-The current release is **Version 1.0**, launched in October 2024.
+The current release is **Version 1.0**, launched in November 2024.
 
 ## 📝 Project Description
 
