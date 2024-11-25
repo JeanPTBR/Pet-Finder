@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <title>Pet Finder</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <!--menu site-->
+        <div class="navbar">
+            <div class="logo">
+                <img src="../assets/Pet Finder.png">
+            </div>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/adocao">Adoção</a></li>
+                <li><a href="/encontrarPet">Encontrar pet</a></li>
+                <li><a href="/chatbot">Chatbot</a></li>
+            </ul>
+            <a href="#" class="action_btn">Inicie aqui</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <!--menu responsivo-->
+        <div class="dropdown_menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/adocao">Adoção</a></li>
+            <li><a href="/encontrarPet">Encontrar pet</a></li>
+            <a href="#" class="action_btn">Inicie aqui</a>
+        </div>
+    </header>
+    
+    <!--script utilizado para abrir e fechar menu responsivo-->
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function(){
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ?"fa-solid fa-xmark"
+            :"fa-solid fa-bars"
+        }
+    </script>
+
+<div class="container-banner">
+    <div class="slider-wrapper">
+        <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+        <div class="image-list">
+            <img src="../assets/banner/banner1.png" alt="" class="image-item">
+            <img src="../assets/banner/banner2.png" alt="" class="image-item">
+            <img src="../assets/banner/banner3.png" alt="" class="image-item">
+            <img src="../assets/banner/banner4.png" alt="" class="image-item">
+            <img src="../assets/banner/banner5.png" alt="" class="image-item">
+        </div>
+        <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
+    </div>
+</div>
+
+<div class="slider-scrollbar">
+    <div class="scrollbar-track">
+        <div class="scrollbar-thumb">
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <section class="pet-section">
+        <h2>Adoção de Pets</h2>
+        <p>A adoção de pets é uma forma maravilhosa de dar um lar a um animal que precisa. Existem muitos cães e gatos em abrigos à espera de uma família.</p>
+    </section>
+    <section class="pet-section">
+        <h2>Cuidados Básicos com Pets</h2>
+        <p>Cuidar de um animal de estimação envolve responsabilidade. É importante garantir uma alimentação adequada, exercícios regulares e visitas ao veterinário.</p>
+    </section>
+    <section class="pet-section">
+        <h2>Benefícios de Ter um Pet</h2>
+        <p>Ter um animal de estimação traz muitos benefícios, como companhia, amor incondicional e até mesmo melhorias na saúde mental e física.</p>
+    </section>
+</div>
+
+
+</body>
+</html>

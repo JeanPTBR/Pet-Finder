@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <title>Encontrar Pet</title>
+    <link rel="stylesheet" href="../css/styleEncontrarPet.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../js/script.js" defer></script>
+    
+</head>
+<body>
+
+
+    <header>
+        <!--menu site-->
+        <div class="navbar">
+            <div class="logo">
+                <img src="../assets/Pet Finder.png">
+            </div>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/adocao">Adoção</a></li>
+                <li><a href="/encontrarPet">Encontrar pet</a></li>
+                <li><a href="/chatbot">Chatbot</a></li>
+            </ul>
+            <a href="#" class="action_btn">Inicie aqui</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <!--menu responsivo-->
+        <div class="dropdown_menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/adocao">Adoção</a></li>
+            <li><a href="pet">Encontrar pet</a></li>
+            <a href="#" class="action_btn">Inicie aqui</a>
+        </div>
+    </header>
+
+     <!--script utilizado para abrir e fechar menu responsivo-->
+     <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function(){
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ?"fa-solid fa-xmark"
+            :"fa-solid fa-bars"
+        }
+    </script>
+    
+
+    <!--seção de informações-->
+    <div class="container">
+        <section class="pet-section">
+            <h2>Procurando pet perdido?</h2></br>
+            <p>Perder um animal de estimação pode ser uma das experiências mais angustiantes para um tutor. O apego emocional que temos por nossos pets é imenso, e a preocupação com o seu bem-estar pode gerar ansiedade e tristeza. No entanto, é importante lembrar que existem maneiras eficazes de procurá-los.</p>
+        </section>
+        <section class="pet-section">
+            <h2>Encontrou um pet perdido?</h2></br>
+            <p>Encontrar um animal de estimação perdido é uma das experiências mais emocionantes que um tutor pode vivenciar. A angústia da separação é intensa, mas o momento em que você se reúne com seu amigo peludo é indescritível. Essa jornada de busca e reencontro é marcada por esperança e perseverança.</p>
+        </section>
+        
+    </div></br>
+
+       <div class="btn-form">    
+            <div class="btn_procura" onclick="window.location.href='/chatbot'">Procurando pet</div>
+            <div class="btn_achei" onclick="abrirModalAchei()">Achei um pet</div>
+       </div>
+    
+    <div class="janela-modal-procura" id="janela-modal-procura">
+        <div class="modal-procura">
+            <button class="fechar-procura" id="fechar-procura">X</button>
+            
+            <div class="container-form">
+               
+                <div class="form-box">
+                    <h2>Pesquisa de pet perdido</h2></br>
+                    <form action="" method="get">
+                        <input type="text" nome="nome" placeholder="Nome">
+                        <input type="text" email="email" placeholder="Email">
+                        <label>Escolha o animal:</label></br>
+                        <select name="animal" id="Animais" >
+                           
+                                <option value="cachorro">Cachorro</option>
+                                <option value="gato">Gato</option>
+                                <option value="exotico">Exóticos</option>
+                              
+                        </select></br>
+                        <label>Selecione a imagem:</label></br>
+                        <input type="file" name="imagem" placeholder="Selecione a imagem">   
+                        
+
+
+                    </form>
+                </div>
+             </div>   
+        </div>
+    </div>
+
+    <div class="janela-modal-encontrei" id="janela-modal-encontrei">
+        <div class="modal-achei">
+            <button class="fechar-encontrei" id="fechar-encontrei">X</button>
+            <p>
+                Que alegria saber que encontrou um pet perdido! 💖 Entre em contato com a nossa instituição pelo telefone 
+                descrito abaixo. Nós iremos abrigar o pet com carinho e registrar todas as informações dele em nosso banco de dados 
+                para que a família possa encontrá-lo. Obrigado por fazer a diferença! 🐾
+                <br><br>
+                Telefone da Instituição: (11) 98457-3057
+            </p>
+
+        </div>
+    </div>
+
+    
+
+
+    <script src="../js/modal.js" defer></script>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+</body>
+</html>

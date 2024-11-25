@@ -1,0 +1,10 @@
+[tool.taskipy.tasks]
+
+# Limpar o cache
+clean = "python -m tasks.clean"
+
+
+sls-off = "cd Pet_Finder_API && serverless offline"
+
+
+deploy = "python -m tasks.deploy_docker_image && cd Pet_Finder_API && serverless deploy --force"

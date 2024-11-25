@@ -1,0 +1,95 @@
+service: pet-finder
+frameworkVersion: '4.2.5'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: us-east-1
+  ecr:
+    images:
+      transcribeimage:
+        path: ./
+
+  # S3 IAM
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:*
+      Resource: "*"
+
+  # Transcribe IAM
+    - Effect: Allow
+      Action:
+        - transcribe:*
+      Resource: "*"
+
+  # Rekognition IAM
+    - Effect: Allow
+      Action:
+        - rekognition:*
+      Resource: "*"
+
+  # DynamoDB IAM
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: "*"
+
+functions:
+  health:
+    handler: info.health
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  v1Description:
+    handler: info.v1_description
+    events:
+      - httpApi:
+          path: /v1
+          method: get
+
+  transcribeStreaming:
+    image:
+      name: transcribeimage
+    memorySize: 1024
+    timeout: 90
+    events:
+      - httpApi:
+          path: /v1/stream
+          method: post
+
+  rekognitionService:
+    handler: aws.rekognition.rek_handler.lambda_handler
+    timeout: 90
+    events:
+      - httpApi:
+          path: /v1/rekognition
+          method: post
+  
+  filterBreed:
+    handler: aws.dynamodb.adocao.lambda_handler
+    timeout: 90
+    events:
+      - httpApi:
+          path: /v1/filter-breed
+          method: post
+
+package:
+  exclude:
+    - node_modules/**
+    - .env
+    - .venv
+
+custom:
+  dotenv:
+    path: ../.env
+
+  pythonRequirements:
+    dockerizePip: true
+
+plugins:
+  - serverless-offline
+  - serverless-python-requirements
+  - serverless-dotenv-plugin

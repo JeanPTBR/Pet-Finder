@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="minimum-scale=1, maximum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/styleChatbot.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- AWS SDK -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1037.0.min.js"></script>
+
+    <!-- Incluindo a biblioteca uuid através de um CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/uuid@8.3.2/dist/umd/uuid.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <!--menu site-->
+        <div class="navbar">
+            <div class="logo">
+                <img src="../assets/Pet Finder.png">
+            </div>
+            <ul class="links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/adocao">Adoção</a></li>
+                <li><a href="/chatbot">Chatbot</a></li>
+            </ul>
+            <a href="#" class="action_btn">Menu</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <!--menu responsivo-->
+        <div class="dropdown_menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/adocao">Adoção</a></li>
+            <li><a href="pet">Encontrar pet</a></li>
+            <a href="#" class="action_btn">Inicie aqui</a>
+        </div>
+    </header>
+
+     <!--script utilizado para abrir e fechar menu responsivo-->
+     <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function(){
+            dropDownMenu.classList.toggle('open')
+            const isOpen = dropDownMenu.classList.contains('open')
+
+            toggleBtnIcon.classList = isOpen
+            ?"fa-solid fa-xmark"
+            :"fa-solid fa-bars"
+        }
+    </script>
+
+    <!-- Chatbot centralizado -->
+    <div class="chat-container" id="chat-container">
+        <div id="chatbox"></div>
+
+        <!-- Elemento de Loading -->
+        <div id="loading" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> <i id="text-loading"> </i>
+        </div>
+
+        <div id="input-container">
+            <label for="imageUpload" id="imageIcon" class="fas fa-image" style="cursor: pointer;"></label>
+            <input type="file" id="imageUpload" style="display: none;" accept="image/*" />
+
+            <input type="text" id="userInput" placeholder="Digite sua mensagem" maxlength="16">
+            
+            <i id="microphoneIcon" class="fas fa-microphone"></i> <!-- Ícone do microfone -->
+        </div>
+        <button id="sendButton">Enviar</button>
+    </div>
+    
+    <!-- Placeholder para a imagem do pet -->
+     <div class="img-chat">
+        <img id="pet" src="../assets/chatbot_dog.png" alt="Pet">
+     </div>
+    <img id="pet" src="../assets/chatbot_dog.png" alt="Pet">
+    
+    <script src="../js/chatbot_script.js"></script>
+</body>
+</html>

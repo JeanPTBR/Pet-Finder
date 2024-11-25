@@ -1,0 +1,417 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans' , sans-serif;
+}
+
+body{
+    height: 100vh;
+    background-color: #fff4ef;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    background-image: url('../assets/background_old.jpg');
+    
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+
+}
+
+a:hover{
+    color:gray;
+}
+
+header{
+    position: relative;
+    padding: 0 2rem;
+    
+
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px ;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: black;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action_btn{
+    background-color: #e87229;
+    color: black;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.action_btn:hover{
+    scale: 1.05;
+    color: black;
+}
+
+.action_btn:active{
+    scale: 0.95;
+}
+
+.logo {
+    height: auto;
+}
+
+/*menu dropdown*/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 250px;
+    background: rgba(87, 86, 86, 0.116);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: heigth 0.2 cubic-bezier(0.175, 0.885, 0.32, 1.275)
+
+}
+
+.dropdown_menu.open{
+    height: 200px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown_menu .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/*seçao de artigos*/
+.container {
+    margin-top:200px;
+    display: flex;
+    justify-content: space-between; /* Espaço igual entre as seções */
+    flex-wrap: wrap; /* Permite que as seções se ajustem em diferentes tamanhos de tela */
+}
+
+.pet-section {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1; /* Cada seção ocupará espaço igual */
+    min-width: 250px; /* Largura mínima para manter a legibilidade */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-form 
+{
+    justify-content: space-between;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 460px;
+    
+}
+
+.btn_procura 
+{ 
+    border-radius: 10px;
+    background:#e87229;
+    padding: 10px 20px;
+    width: 23%;
+    color:black;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.btn_achei{
+   
+    
+    border-radius: 10px;
+    background:#e87229;
+    padding: 10px 20px;
+    width: 23%;
+    color:black;
+    text-align: center;
+    cursor: pointer;
+    
+}
+
+.janela-modal-procura
+{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin-top: -500px;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.324);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.janela-modal-encontrei
+{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    margin-top: -500px;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.324);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.modal-procura
+{
+    width: 60%;
+    min-width: 450px;
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.modal-achei
+{
+    width: 60%;
+    min-width: 450px;
+    min-height: 200px;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+
+.fechar
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:0;
+    background-color: black;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fechar-procura
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:0;
+    background-color: black;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.fechar-encontrei
+{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border:0;
+    background-color: black;
+    color:white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.janela-modal-procura.abrir
+{
+    display:flex;
+}
+
+.janela-modal-encontrei.abrir
+{
+    display:flex;
+}
+
+
+
+
+@keyframes abrirmodal {
+    from{
+        opacity: 0;
+        transform: translate3d(0,-20px,-5)
+    }
+    to{
+        opacity: 1;
+        transform: translate3d(0,0,0);
+
+    }
+}
+
+.abrir .modal
+{
+    animation: abrirmodal 0.2s;
+}
+
+/*css do formulario*/
+.container-form
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.form-box
+{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    width: 700px;
+}
+
+.form-box .title
+{
+    padding: 24px 32px;
+    font-size: 24px;
+    border-bottom: thin solid #ccc;
+    
+}
+
+.form-box form
+{
+    display: flex;
+    align-items: start;
+    flex-wrap:wrap ;
+    padding: 32px;
+    width: 100%;
+    
+}
+
+.form-box input,
+.form-box select
+{
+    width: calc(50% - 8px);
+    height: 48px;
+    border-radius: 8px;
+    border: thin solid #999;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    width: 100%;
+
+}
+
+.form-box input:first-child{
+    margin-right: 16px;
+}
+
+.form-box input[name=subject]{
+    width: 100%;
+}
+
+.form-box button{
+    display: block;
+    border: none;
+    outline: none;
+    width: 180px;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #e87229;
+    color:black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor:pointer;
+}
+
+.form-box button:hover{
+    background-color: #d35406;
+}
+
+/*resoluçao de tela*/
+@media (max-width: 992px){
+    .navbar .links,
+    .navbar .action_btn{
+        display: none;
+    }
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+
+    .slider-wrapper .image-list{
+        gap: 10px;
+        margin-bottom: 15px;
+
+    }
+
+    .slider-wrapper .image-list .image-item{
+        width: 280px;
+        height: 380px;
+    }
+
+    .slider-scrollbar .scrollbar-thumb{
+        width: 20%;
+    }
+}
+
+@media (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+
+
