@@ -163,6 +163,9 @@ Project/
 ├── requirements.txt
 ```
 
+## ⚖️ License:
+Pet Finder is available under the [MIT License](LICENSE).
+
 ## 🌐 Team:
 Developed by:
  | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/167718668?v=4" width=115><br><sub>Jean Carlos</sub>](https://github.com/JeanPTBR) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/173844663?v=4" width=115><br><sub>Moniza Oliveira</sub>](https://github.com/MONIZA-OLIVEIRA) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/130758430?v=4" width=115><br><sub>Hugo Susini</sub>](https://github.com/hsusini) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/25685390?v=4" width=115><br><sub>John Sousa</sub>](https://github.com/johnSousa23) | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/75399115?v=4" width=115><br><sub>Victor Sousa</sub>](https://github.com/souiuri)
